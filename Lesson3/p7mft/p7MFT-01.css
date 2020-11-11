@@ -1,0 +1,125 @@
+/*
+ ----------------------------- 
+ PVII Mobile-Friendly Tables
+ by Project Seven Development
+ www.projectseven.com
+ Core CSS
+ -----------------------------
+*/
+table.mft-adaptive {
+	border-collapse: separate;
+	width: 100% !important;
+	table-layout: fixed;
+	border-spacing: 5px;
+}
+table.mft-adaptive td,
+table.mft-adaptive th {
+	padding: 5px;
+	vertical-align: top;
+	text-align: left;
+}
+table.mft-adaptive td {
+	padding: 5px;
+}
+table.mft-adaptive.mft-scalable {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+}
+table.mft-scalable img {
+		width: auto !important;
+		height: auto !important;
+		max-width: 100% !important;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 700px) {
+	
+	/*NORMAL*/
+	table.mft-normal {
+		table-layout: fixed;
+		width: 100%;
+		margin: auto;
+	}
+	table.mft-normal th,
+	table.mft-normal td,
+	table.mft-normal tr {
+		display: block;
+		text-align: left;
+		width: auto;
+	}
+	table.mft-normal th,
+	table.mft-normal td {
+		padding: 1em;
+		border: none;
+	}
+	/*Global To Hide Column Groups*/
+	colgroup {display: none !important;}
+	
+
+	/*PIVOT*/
+	table.mft-pivot {
+		table-layout: fixed;
+		width: 100%;
+		margin: auto;
+	}
+	
+	/* Force table to not be like tables anymore */ 
+	table.mft-pivot th, 
+	table.mft-pivot td, 
+	table.mft-pivot tr { 
+		display: block; 
+		width: auto;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	table.mft-pivot tr.mft-header { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	table.mft-pivot tr { border: 1px solid #ccc; }
+
+	table.mft-pivot td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #EEE; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+	}
+	table.mft-pivot td, table.mft-pivot th { 
+		text-align:left;
+		border: none;
+	}
+	table.mft-pivot td:last-child { 
+		border-bottom: none; 
+	}
+	table.mft-pivot tr { 
+		/* Behave  like a "row" */
+		border-bottom: 1px solid #EEE; 
+	}
+
+	table.mft-pivot td:before {
+	/* Now like a table header */
+	position: absolute;
+	/* Top/left values mimic padding */
+	top: .5em;
+	left: 6px;
+	width: 45%;
+	padding-right: 10px;
+	white-space: nowrap;
+	text-align: left;
+	text-transform: uppercase;
+	font-weight: normal;
+	}
+	
+
+	/*
+	Label the data
+	*/
+	table.mft-pivot td:before { content: attr(data-mft-header); }
+	table.mft-pivot td:nth-child(2) {font-weight: bold;}
+	table.mft-pivot tr:nth-child(even) {background-color: #FFCC66;}
+	
+} 

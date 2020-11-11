@@ -1,0 +1,280 @@
+/* 
+  -----------------------------------
+  Tab Panel Magic 3
+  by Project Seven Development
+  www.projectseven.com
+  Style Theme: 8 - Glassy Green
+  -----------------------------------
+*/
+.p7TP3-08 {
+	width: auto;
+	margin: 0 auto;
+	padding: 16px;
+	border-radius: 5px;
+	background-color: #434C53;
+	box-shadow: 0px 0px 30px rgba(0,0,0,.5);
+	background-image: url(img/tp3_08_scratch.jpg);
+	font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+.p7TP3-08 img {
+	vertical-align: top;
+}
+/*Triggers construct - including arrows*/
+.p7TP3-08 .p7TP3tabs_08.no-tabs {
+	display: none;
+}
+.p7TP3tabs_08 {
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+	zoom: 1;
+}
+.p7TP3_arrows_08 .p7TP3_arrow_L, .p7TP3_arrows_08 .p7TP3_arrow_R {
+	float: left;
+	position: relative;
+	z-index: 10;
+	height: 24px;
+	overflow: hidden;
+	width: 20px;
+	top: 12px;
+}
+.p7TP3_arrows_08 .p7TP3_arrow_R {
+	float: right;
+}
+.p7TP3_arrows_08 a {
+	display: block;
+	text-decoration: none;
+	text-indent: -9999px;
+	width: 20px;
+	background-repeat: no-repeat;
+}
+.p7TP3_arrows_08 .p7TP3_arrow_L a {
+	background-image: url(img/tp3_08_west.png);
+}
+.p7TP3_arrows_08 .p7TP3_arrow_R a {
+	background-image: url(img/tp3_08_east.png);
+}
+.p7TP3_arrows_08 a:hover, .p7TP3_arrows_08 a:focus {
+	outline: 0;
+}
+.p7TP3_arrows_08 .p7TP3_arrow_R a.off {
+	display: block;
+	cursor: default;
+	opacity: .2;
+}
+.p7TP3_arrows_08 .p7TP3_arrow_L a.off {
+	display: block;
+	cursor: default;
+	opacity: .2;
+}
+/*Trigger and Arrows Font Size, top, and bottom padding*/
+.p7TP3_arrows_08 a, .p7TP3_tabs_08 a, .p7TP3_tabs_08 a:visited {
+	font-size: inherit;
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+}
+/*Trigger Viewport*/
+.p7TP3-08 .p7TP3tabs_viewport {
+	position:relative;
+	overflow:hidden;
+	zoom: 1;
+}
+/*Trigger Wrapper*/
+.p7TP3-08 .p7TP3tabs_wrapper {
+	position:relative;
+}
+/*Trigger UL*/
+.p7TP3_tabs_08 {
+	margin: 0;
+	padding: 0px;
+	position: relative;
+	z-index: 10;
+	zoom: 1;
+}
+.p7TP3_tabs_08 a img {
+	border: 0;
+}
+.p7TP3_tabs_08 li {
+	float: left;
+	list-style-type: none;
+	margin-left: 0px;
+	position: relative;
+	margin-right: 6px;
+	margin-bottom: 8px;
+}
+.p7TP3_tabs_08 .tp3first {
+	margin-left: 0px;
+
+}
+.p7TP3_tabs_08 a, .p7TP3_tabs_08 a:visited {
+	background-color: #7AC5CB;
+	border-top: 1px solid #92CED3;
+	border-right: 1px solid #65BBC2;
+	border-bottom: 1px solid #65BBC2;
+	border-left: 1px solid #92CED3;
+}
+.p7TP3_tabs_08 a, .p7TP3_tabs_08 a:visited {
+	display: block;
+	text-decoration: none;
+	padding-right: 12px;
+	padding-left: 12px;
+	color: #000;
+	border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.5);
+	background-color: rgba(60,204,204,0.5);
+	box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+.p7TP3_tabs_08 a:hover, .p7TP3_tabs_08 a:focus {
+	background-color: #DDD;
+	border-color: #E8E8E8 #C7C7C7 #C7C7C7 #E8E8E8;
+}
+.p7TP3_tabs_08 a:hover, .p7TP3_tabs_08 a:focus {
+	outline: 0;
+	color: #000;
+	background-color: rgba(200,200,200,0.5);
+	border: 1px solid rgba(0,0,0,0.5);
+}
+.p7TP3_tabs_08 a.open, .p7TP3_tabs_08 a.open:visited {
+	background-color: #222;
+	border-color: #666 #000 #000 #666;
+}
+.p7TP3_tabs_08 a.open, .p7TP3_tabs_08 a.open:visited {
+	color: #DDD;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 10;
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+/*Toolbars*/
+.p7TP3-08.tools-top {
+	padding-top: 0px;
+}
+.p7TP3-08.tools-bottom {
+	padding-bottom: 0px;
+}
+.p7TP3-08-tools {
+	position: relative;
+	text-align: center;
+	padding: 6px 0px;
+	overflow: hidden;
+}
+
+/*Paginator*/
+.p7TP3-08 .p7TP3-08-pags {
+	overflow: hidden;
+}
+.p7TP3-08 .p7TP3-08-pags ul {
+	margin: 0px;
+	padding: 0;
+	display: inline-block;
+}
+.p7TP3-08 .p7TP3-08-pags li {
+	list-style-type: none;
+	float: left;
+	margin-right: 6px;
+	margin: 3px;
+}
+.p7TP3-08 .p7TP3-08-pags ul a {
+	text-decoration: none;
+	display: block;
+	color: #808D99;
+	background-color: #808D99;
+	font-size: 0px;
+	line-height: 0px;
+	padding: 5px;
+	border-radius: 100%;
+	border: none !important;
+}
+.p7TP3-08 .p7TP3-08-pags ul a:hover, .p7TP3-08 .p7TP3-08-pags ul a.down {
+	background-color: #000000;
+}
+/*Prev-Next Arrows*/
+
+.p7TP3-08 .p7TP3-08-arrows a {
+	text-decoration: none;
+	position: absolute;
+	z-index: 10;
+	display: block;
+	opacity: .35;
+	font-size: 0px;
+	color: rgba(255,255,255,0);
+}
+.p7TP3-08 .p7TP3-08-arrows a:hover {
+	opacity: 1;
+}
+.p7TP3-08 .p7TP3-08-arrow-prev {
+	left: 3px;
+	top: 42%;
+	background-image: url(img/p7tp3-prev-light.png);
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 14px;
+}
+
+.p7TP3-08.v-slide .p7TP3-08-arrow-prev {
+	left: auto;
+	top: 6px;
+	background-image: url(img/p7tp3-up-light.png);
+	height: 14px;
+	width: 25px;
+	right: 6px;
+}
+
+.p7TP3-08 .p7TP3-08-arrow-next {
+	right: 3px;
+	top: 42%;
+	background-image: url(img/p7tp3-next-light.png);
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 14px;
+}
+
+.p7TP3-08.v-slide .p7TP3-08-arrow-next {
+	right: 3px;
+	top: auto;
+	bottom: 6px;
+	background-image: url(img/p7tp3-down-light.png);
+	height: 14px;
+	width: 25px;
+}
+/*Pause-Play Control*/
+.p7TP3-08-pause-play {
+	float: right;
+	font-size: 13px;
+}
+.p7TP3-08-pause-play a {
+	display: block;
+	text-decoration: none;
+	color: #A4AEB5;
+	text-transform: uppercase;
+}
+.p7TP3-08-pause-play a:hover {
+	color: #000000;
+}
+
+/*Panels*/
+/*Outer Wrapper*/
+.p7TP3cwrapper_08 {
+	position: relative;
+	top: 0px;
+	z-index: 10;
+	border: 1px solid #ACB6BD;
+	border-radius: 6px;
+	background-color: rgba(0,0,0,0.35);
+}
+
+/*Individual panels*/
+.p7TP3_content_08 {
+	padding: 20px;
+	font-size: inherit;
+	line-height: 1.5em;
+	color: #ACB6BD;
+}
+.p7TP3_content_08 a {
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+.p7TP3_content_08 a:hover, .p7TP3_content_08 a:focus {
+	color: #000;
+}

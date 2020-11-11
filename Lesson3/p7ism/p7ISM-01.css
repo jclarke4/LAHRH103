@@ -1,0 +1,779 @@
+/*
+*****************************************
+ PVII Info Slider
+ by Project Seven Development
+ www.projectseven.com
+ version 1.1.8
+*****************************************
+*/
+.ism-flex-fix, 
+.ism-flex-fix .hmy-content-wrapper {
+	overflow: hidden;
+}
+
+.p7ISM, .p7ISM * {
+	box-sizing: border-box;
+}
+.p7ISM {
+	position: relative;
+	overflow: hidden;
+	padding: 0px;
+}
+.p7ISM.ism-rounded .ism-outer-wrapper {
+	border-radius: 5px;
+}
+.ism-content-wrapper {
+	width: 100%;
+}
+
+/*
+******************************
+         COLORS
+******************************
+*/
+.p7ISM.ism-root-gray .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-gray,
+.p7ISM.ism-arrow-gray .ism-arrow-left,
+.p7ISM.ism-arrow-gray .ism-arrow-right,
+.ism-pags-color-gray.ism-paginator a,
+.ism-pags-hover-gray.ism-paginator a:hover,
+.ism-pags-down-gray.ism-paginator a.down {
+	background-color: rgb(134,134,134);
+	color: #FFF;
+}
+.p7ISM.ism-root-gray.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-gray,
+.p7ISM.ism-transparent.ism-arrow-gray .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-gray .ism-arrow-right {
+	background-color: rgba(134,134,134,0.80);
+	color: #FFF;
+}
+.p7ISM.ism-root-black .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-black,
+.p7ISM.ism-arrow-black .ism-arrow-left,
+.p7ISM.ism-arrow-black .ism-arrow-right,
+.ism-pags-color-black.ism-paginator a,
+.ism-pags-hover-black.ism-paginator a:hover,
+.ism-pags-down-black.ism-paginator a.down {
+	background-color: rgb(21,21,21);
+	color: #FFF;
+}
+.p7ISM.ism-root-black.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-black,
+.p7ISM.ism-transparent.ism-arrow-black .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-black .ism-arrow-right {
+	background-color: rgba(21,21,21,0.80);
+	color: #FFF;
+}
+.p7ISM.ism-root-white .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-white,
+.p7ISM.ism-arrow-white .ism-arrow-left,
+.p7ISM.ism-arrow-white .ism-arrow-right,
+.ism-pags-color-white.ism-paginator a,
+.ism-pags-hover-white.ism-paginator a:hover,
+.ism-pags-down-white.ism-paginator a.down {
+	background-color: rgb(255,255,255);
+	color: #000;
+}
+.p7ISM.ism-root-white.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-white,
+.p7ISM.ism-transparent.ism-arrow-white .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-white .ism-arrow-right {
+	background-color: rgba(255,255,255,0.80);
+	color: #000;
+}
+.p7ISM.ism-root-green .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-green,
+.p7ISM.ism-arrow-green .ism-arrow-left,
+.p7ISM.ism-arrow-green .ism-arrow-right,
+.ism-pags-color-green.ism-paginator a,
+.ism-pags-hover-green.ism-paginator a:hover,
+.ism-pags-down-green.ism-paginator a.down {
+	background-color: rgb(126,188,89);
+	color: #FFF;
+}
+.p7ISM.ism-root-green.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-green,
+.p7ISM.ism-transparent.ism-arrow-green .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-green .ism-arrow-right {
+	background-color: rgba(126,188,89,0.80);
+	color: #FFF;
+}
+.p7ISM.ism-root-mint .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-mint,
+.p7ISM.ism-arrow-mint .ism-arrow-left,
+.p7ISM.ism-arrow-mint .ism-arrow-right,
+.ism-pags-color-mint.ism-paginator a,
+.ism-pags-hover-mint.ism-paginator a:hover,
+.ism-pags-down-mint.ism-paginator a.down {
+	background-color: rgb(76,182,159);
+	color: #000;
+}
+.p7ISM.ism-root-mint.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-mint,
+.p7ISM.ism-transparent.ism-arrow-mint .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-mint .ism-arrow-right {
+	background-color: rgba(76,182,159,0.80);
+	color: #000;
+}
+.p7ISM.ism-root-blue .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-blue,
+.p7ISM.ism-arrow-blue .ism-arrow-left,
+.p7ISM.ism-arrow-blue .ism-arrow-right,
+.ism-pags-color-blue.ism-paginator a,
+.ism-pags-hover-blue.ism-paginator a:hover,
+.ism-pags-down-blue.ism-paginator a.down {
+	background-color: rgb(69,114,150);
+	color: #FFF;
+}
+.p7ISM.ism-root-blue.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-blue,
+.p7ISM.ism-transparent.ism-arrow-blue .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-blue .ism-arrow-right {
+	background-color: rgba(69,114,150,0.80);
+	color: #FFF;
+}
+.p7ISM.ism-root-red .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-red,
+.p7ISM.ism-arrow-red .ism-arrow-left,
+.p7ISM.ism-arrow-red .ism-arrow-right,
+.ism-pags-color-red.ism-paginator a,
+.ism-pags-hover-red.ism-paginator a:hover,
+.ism-pags-down-red.ism-paginator a.down {
+	background-color: rgb(251,11,11);
+	color: #FFF;
+}
+.p7ISM.ism-root-red.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-red,
+.p7ISM.ism-transparent.ism-arrow-red .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-red .ism-arrow-right {
+	background-color: rgba(251,11,11,0.80);
+	color: #FFF;
+}
+.p7ISM.ism-root-skyblue .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-skyblue,
+.p7ISM.ism-arrow-skyblue .ism-arrow-left,
+.p7ISM.ism-arrow-skyblue .ism-arrow-right,
+.ism-pags-color-skyblue.ism-paginator a,
+.ism-pags-hover-skyblue.ism-paginator a:hover,
+.ism-pags-down-skyblue.ism-paginator a.down {
+	background-color: cornflowerblue;
+	color: #000;
+}
+.p7ISM.ism-root-skyblue.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-skyblue,
+.p7ISM.ism-transparent.ism-arrow-skyblue .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-skyblue .ism-arrow-right {
+	background-color: cornflowerblue;
+	color: #000;
+}
+
+.p7ISM.ism-root-silver .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-silver,
+.p7ISM.ism-arrow-silver .ism-arrow-left,
+.p7ISM.ism-arrow-silver .ism-arrow-right,
+.ism-pags-color-silver.ism-paginator a,
+.ism-pags-hover-silver.ism-paginator a:hover,
+.ism-pags-down-silver.ism-paginator a.down {
+	background-color: rgb(230,219,201);
+	color: #000;
+}
+.p7ISM.ism-root-silver.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-silver,
+.p7ISM.ism-transparent.ism-arrow-silver .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-silver .ism-arrow-right {
+	background-color: rgba(230,219,201,0.80);
+	color: #000;
+}
+
+.p7ISM.ism-root-purple .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-purple,
+.p7ISM.ism-arrow-purple .ism-arrow-left,
+.p7ISM.ism-arrow-purple .ism-arrow-right,
+.ism-pags-color-purple.ism-paginator a,
+.ism-pags-hover-purple.ism-paginator a:hover,
+.ism-pags-down-purple.ism-paginator a.down {
+	background-color: rgb(17,28,48);
+	color: #FFF;
+}
+.p7ISM.ism-root-purple.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-purple,
+.p7ISM.ism-transparent.ism-arrow-purple .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-purple .ism-arrow-right {
+	background-color: rgba(17,28,48,0.80);
+	color: #FFF;
+}
+
+.p7ISM.ism-root-lavender .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-lavender,
+.p7ISM.ism-arrow-lavender .ism-arrow-left,
+.p7ISM.ism-arrow-lavender .ism-arrow-right,
+.ism-pags-color-lavender.ism-paginator a,
+.ism-pags-hover-lavender.ism-paginator a:hover,
+.ism-pags-down-lavender.ism-paginator a.down {
+	background-color: rgb(154,77,85);
+	color: #fff;
+}
+.p7ISM.ism-root-lavender.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-lavender,
+.p7ISM.ism-transparent.ism-arrow-lavender .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-lavender .ism-arrow-right {
+	background-color: rgba(154,77,85,0.80);
+	color: #fff;
+}
+
+.p7ISM.ism-root-beige .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-beige,
+.p7ISM.ism-arrow-beige .ism-arrow-left,
+.p7ISM.ism-arrow-beige .ism-arrow-right,
+.ism-pags-color-beige.ism-paginator a,
+.ism-pags-hover-beige.ism-paginator a:hover,
+.ism-pags-down-beige.ism-paginator a.down {
+	background-color: rgb(231,213,175);
+	color: #000;
+}
+.p7ISM.ism-root-beige.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-beige,
+.p7ISM.ism-transparent.ism-arrow-beige .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-beige .ism-arrow-right {
+	background-color: rgba(231,213,175,0.80);
+	color: #000;
+}
+
+.p7ISM.ism-root-wine .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-wine,
+.p7ISM.ism-arrow-wine .ism-arrow-left,
+.p7ISM.ism-arrow-wine .ism-arrow-right,
+.ism-pags-color-wine.ism-paginator a,
+.ism-pags-hover-wine.ism-paginator a:hover,
+.ism-pags-down-wine.ism-paginator a.down {
+	background-color: rgb(167,27,27);
+	color: #FFF;
+}
+.p7ISM.ism-root-wine.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-wine,
+.p7ISM.ism-transparent.ism-arrow-wine .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-wine .ism-arrow-right {
+	background-color: rgba(167,27,27,0.80);
+	color: #FFF;
+}
+
+.p7ISM.ism-root-forest .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-forest,
+.p7ISM.ism-arrow-forest .ism-arrow-left,
+.p7ISM.ism-arrow-forest .ism-arrow-right,
+.ism-pags-color-forest.ism-paginator a,
+.ism-pags-hover-forest.ism-paginator a:hover,
+.ism-pags-down-forest.ism-paginator a.down {
+	background-color: rgb(107,138,85);
+	color: #FFF;
+}
+.p7ISM.ism-root-forest.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-forest,
+.p7ISM.ism-transparent.ism-arrow-forest .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-forest .ism-arrow-right {
+	background-color: rgba(107,138,85,0.80);
+	color: #FFF;
+}
+
+.p7ISM.ism-root-mist .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-mist,
+.p7ISM.ism-arrow-mist .ism-arrow-left,
+.p7ISM.ism-arrow-mist .ism-arrow-right,
+.ism-pags-color-mist.ism-paginator a,
+.ism-pags-hover-mist.ism-paginator a:hover,
+.ism-pags-down-mist.ism-paginator a.down {
+	background-color: rgb(218,239,217);
+	color: #000;
+}
+.p7ISM.ism-root-mist.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-mist,
+.p7ISM.ism-transparent.ism-arrow-mist .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-mist .ism-arrow-right {
+	background-color: rgba(218,239,217,0.80);
+	color: #000;
+}
+
+.p7ISM.ism-root-rust .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-rust,
+.p7ISM.ism-arrow-rust .ism-arrow-left,
+.p7ISM.ism-arrow-rust .ism-arrow-right,
+.ism-pags-color-rust.ism-paginator a,
+.ism-pags-hover-rust.ism-paginator a:hover,
+.ism-pags-down-rust.ism-paginator a.down {
+	background-color: rgb(193,67,46);
+	color: #FFF;
+}
+.p7ISM.ism-root-rust.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-rust,
+.p7ISM.ism-transparent.ism-arrow-rust .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-rust .ism-arrow-right {
+	background-color: rgba(193,67,46,0.80);
+	color: #FFF;
+}
+
+.p7ISM.ism-root-silverblue .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-silverblue,
+.p7ISM.ism-arrow-silverblue .ism-arrow-left,
+.p7ISM.ism-arrow-silverblue .ism-arrow-right,
+.ism-pags-color-silverblue.ism-paginator a,
+.ism-pags-hover-silverblue.ism-paginator a:hover,
+.ism-pags-down-silverblue.ism-paginator a.down {
+	background-color: rgb(75,103,119);
+	color: #FFF;
+}
+.p7ISM.ism-root-silverblue.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-silverblue,
+.p7ISM.ism-transparent.ism-arrow-silverblue .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-silverblue .ism-arrow-right {
+	background-color: rgba(75,103,119,0.80);
+	color: #FFF;
+}
+
+.p7ISM.ism-root-gold .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-gold,
+.p7ISM.ism-arrow-gold .ism-arrow-left,
+.p7ISM.ism-arrow-gold .ism-arrow-right,
+.ism-pags-color-gold.ism-paginator a,
+.ism-pags-hover-gold.ism-paginator a:hover,
+.ism-pags-down-gold.ism-paginator a.down {
+	background-color: rgb(226,160,71);
+	color: #000;
+}
+.p7ISM.ism-root-gold.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-gold,
+.p7ISM.ism-transparent.ism-arrow-gold .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-gold .ism-arrow-right {
+	background-color: rgba(226,160,71,0.80);
+	color: #000;
+}
+
+.p7ISM.ism-root-orange .ism-outer-wrapper,
+.p7ISM .ism-panel.ism-panel-orange,
+.p7ISM.ism-arrow-orange .ism-arrow-left,
+.p7ISM.ism-arrow-orange .ism-arrow-right,
+.ism-pags-color-orange.ism-paginator a,
+.ism-pags-hover-orange.ism-paginator a:hover,
+.ism-pags-down-orange.ism-paginator a.down {
+	background-color: rgb(239,118,51);
+	color: #FFF;
+}
+.p7ISM.ism-root-orange.ism-transparent .ism-outer-wrapper,
+.p7ISM.ism-transparent .ism-panel.ism-panel-orange,
+.p7ISM.ism-transparent.ism-arrow-orange .ism-arrow-left,
+.p7ISM.ism-transparent.ism-arrow-orange .ism-arrow-right {
+	background-color: rgba(239,118,51,0.80);
+	color: #FFF;
+}
+
+/*CONTENT*/
+.ism-content {
+	padding: 30px;
+	font-size: inherit;
+}
+.ism-pad-0 .ism-content {padding: 0px;}
+.ism-pad-5 .ism-content {padding: 5px;}
+.ism-pad-10 .ism-content {padding: 10px;}
+.ism-pad-15 .ism-content {padding: 15px;}
+.ism-pad-20 .ism-content {padding: 20px;}
+.ism-pad-25 .ism-content {padding: 25px;}
+.ism-pad-30 .ism-content {padding: 30px;}
+.ism-pad-35 .ism-content {padding: 35px;}
+.ism-pad-40 .ism-content {padding: 40px;}
+.ism-pad-45 .ism-content {padding: 45px;}
+.ism-pad-50 .ism-content {padding: 50px;}
+
+.ism-content p {
+	margin: 5px 0px;
+}
+
+.p7ISM .ism-content p:first-child {
+	margin-top: 0px;
+}
+.ism-vertical-center .ism-content-wrapper {
+	display: inline-flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+}
+.p7ISM img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	vertical-align: bottom;
+}
+.ism-content a {
+	border-bottom: 1px dotted;
+	transition: all linear .5s;
+	color: inherit;
+	text-decoration: none;
+	font-weight: bold;
+}
+.ism-content a:hover {
+	border-bottom: 1px solid;
+}
+/*
+******************************
+      CONTENT ALIGNMENT
+******************************
+*/
+.ism-content-center .ism-content {
+	text-align: center;
+}
+.ism-content-right .ism-content {
+	text-align: right;
+}
+
+
+/*
+*******************************
+           ARROWS
+*******************************
+*/
+.ism-arrow-left,
+.ism-arrow-right {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	height: 100%;
+	margin-top: 0px;
+	padding: 0px;
+	text-align: center;
+	opacity: 0;
+	transition: all linear .5s;
+	width: auto;
+}
+.ism-arrow-left {
+	left: -40px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.75);
+}
+.ism-arrow-right {
+	right: -40px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.75);
+}
+.ism-arrow-left.show,
+.ism-arrow-right.show {
+	opacity: 1;
+}
+.ism-arrow-left.show {
+	left: 0px;
+	top: 0px;
+}
+.ism-arrow-right.show {
+	right: 0px;
+	top: 0px;
+}
+
+.ism-arrow-left a,
+.ism-arrow-right a {
+	display: block;
+	height: 100%;
+	padding: 0px 0px;
+}
+.ism-arrow-left a i,
+.ism-arrow-right a i {
+	transition: all linear .35s;
+}
+.ism-arrow-left a:hover i,
+.ism-arrow-right a:hover i {
+	transform: rotate(360deg);
+}
+.ism-arrow-left i,
+.ism-arrow-right i {
+	display: block;
+	position: relative;
+	font-size: 0px;
+	font-style: normal;
+	height: 100%;
+	width: 24px;
+}
+.ism-arrow-left i,
+.ism-arrow-right i {
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+.p7ISM.ism-arrow-gray .ism-arrow-left i,
+.p7ISM.ism-arrow-black .ism-arrow-left i,
+.p7ISM.ism-arrow-green .ism-arrow-left i,
+.p7ISM.ism-arrow-blue .ism-arrow-left i,
+.p7ISM.ism-arrow-red .ism-arrow-left i,
+.p7ISM.ism-arrow-purple .ism-arrow-left i,
+.p7ISM.ism-arrow-lavender .ism-arrow-left i,
+.p7ISM.ism-arrow-wine .ism-arrow-left i,
+.p7ISM.ism-arrow-forest .ism-arrow-left i,
+.p7ISM.ism-arrow-rust .ism-arrow-left i,
+.p7ISM.ism-arrow-silverblue .ism-arrow-left i,
+.p7ISM.ism-arrow-orange .ism-arrow-left i {
+	background-image: url(img/ism-arrow-left.png);
+}
+.p7ISM.ism-arrow-gray .ism-arrow-right i,
+.p7ISM.ism-arrow-black .ism-arrow-right i,
+.p7ISM.ism-arrow-green .ism-arrow-right i,
+.p7ISM.ism-arrow-blue .ism-arrow-right i,
+.p7ISM.ism-arrow-red .ism-arrow-right i,
+.p7ISM.ism-arrow-purple .ism-arrow-right i,
+.p7ISM.ism-arrow-lavender .ism-arrow-right i,
+.p7ISM.ism-arrow-wine .ism-arrow-right i,
+.p7ISM.ism-arrow-forest .ism-arrow-right i,
+.p7ISM.ism-arrow-rust .ism-arrow-right i,
+.p7ISM.ism-arrow-silverblue .ism-arrow-right i,
+.p7ISM.ism-arrow-orange .ism-arrow-right i {
+	background-image: url(img/ism-arrow-right.png);
+}
+.p7ISM.ism-arrow-white .ism-arrow-left i,
+.p7ISM.ism-arrow-mint .ism-arrow-left i,
+.p7ISM.ism-arrow-skyblue .ism-arrow-left i,
+.p7ISM.ism-arrow-silver .ism-arrow-left i,
+.p7ISM.ism-arrow-beige .ism-arrow-left i,
+.p7ISM.ism-arrow-mist .ism-arrow-left i,
+.p7ISM.ism-arrow-gold .ism-arrow-left i {
+	background-image: url(img/ism-arrow-left-dark.png);
+}
+.p7ISM.ism-arrow-white .ism-arrow-right i,
+.p7ISM.ism-arrow-mint .ism-arrow-right i,
+.p7ISM.ism-arrow-skyblue .ism-arrow-right i,
+.p7ISM.ism-arrow-silver .ism-arrow-right i,
+.p7ISM.ism-arrow-beige .ism-arrow-right i,
+.p7ISM.ism-arrow-mist .ism-arrow-right i,
+.p7ISM.ism-arrow-gold .ism-arrow-right i {
+	background-image: url(img/ism-arrow-right-dark.png);
+}
+
+
+.ism-panel {
+	-webkit-flex-grow: 0;
+	flex-grow: 0;
+	display: flex;
+}
+
+/*BORDERS and SECTION SEPARATORS*/
+.p7ISM.ism-border-top-bottom {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-color: inherit;
+}
+
+.p7ISM.ism-border .ism-outer-wrapper {
+	border: 1px solid;
+	border-color: inherit;
+}
+.ism-panel.ism-separator-medium .ism-content-wrapper {
+	border-right: 1px solid #999;
+}
+.ism-panel.ism-separator-dark .ism-content-wrapper {
+	border-right: 1px solid #181818;
+}
+.ism-panel.ism-separator-light .ism-content-wrapper {
+	border-right: 1px solid #FFF;
+}
+.ism-panel:last-child .ism-content-wrapper {
+	border-right: none !important;
+}
+
+/* set inital pos for animations */
+
+.ism-slide-wrapper {
+	-webkit-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	display: -webkit-box;
+	display: flex;
+	position: relative;
+	width: 100%;
+	transform: translateX(0px);
+}
+
+/* touch action support for Windows - class on root div */
+.p7ISM,
+.p7ISM * {
+	touch-action:pan-y pinch-zoom;
+	ms-touch-action:pan-y pinch-zoom;
+}
+
+.ism-outer-wrapper {
+	position:relative;	
+	overflow: hidden;
+}
+
+/*
+*****************************************
+      PAGINATOR + PAUSE-PLAY
+*****************************************
+*/
+.ism-paginator {
+	text-align: center;
+	font-size: 0px;
+	padding: 5px 0px;
+}
+.ism-paginator ul {
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+}
+.ism-paginator li {
+	list-style-type: none;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 3px;
+}
+.ism-paginator a {
+	text-decoration: none;
+	display: block;
+	height: 11px;
+	width: 11px;
+	border-radius: 100%;
+	border: none;
+	transition: all linear .35s;
+}
+.ism-pags-light.ism-paginator a {
+	background-color: transparent;
+	border: 1px solid #FFF;
+}
+.ism-pags-light.ism-paginator a:hover,
+.ism-pags-light.ism-paginator a.down {
+	background-color: #FFF;
+}
+.ism-pags-dark.ism-paginator a {
+	background-color: transparent;
+	border: 1px solid #000;
+}
+.ism-pags-dark.ism-paginator a:hover,
+.ism-pags-dark.ism-paginator a.down {
+	background-color: #000;
+}
+.ism-paginator a.ism-pause-play:hover {
+	background-color: transparent;
+	opacity: 1;
+}
+/*PAUSE-PLAY*/
+div.ism-play-ctrl {
+	font-size: 0px;
+	position: absolute;
+	z-index: 900;
+	bottom: 5px;
+	right: 5px;
+	transition: right linear .35s;
+}
+div.ism-play-ctrl.ism-arrow-on {
+	right: 30px;
+}
+div.ism-play-ctrl a {
+	display: block;
+	height: 8px;
+	width: 15px;
+	background-color: rgba(255,255,255,0.55);
+	border: 1px solid #000;
+	padding: 15px;
+	border-radius: 5px;
+	transition: all linear .35s;
+	transform: rotate(0deg);
+}
+div.ism-play-ctrl a:hover {
+	background-color: rgba(255,255,255,1.0);
+	transform: rotate(360deg);
+}
+a.ism-pause-play {
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 25px;
+	height: 25px;
+	background-color: transparent;
+	opacity: .7;
+}
+a.ism-pause-play:hover {
+	opacity: 1;
+}
+a.ism-pause-play.paused {
+	background-image: url(img/ism-play.png);
+}
+a.ism-pause-play {
+	background-image: url(img/ism-pause.png);
+}
+
+/*NOSCRIPT RULES: TO FIX DREAMWEAVER DESIGN VIEW*/
+.p7ISM.ism-noscript {
+	position: static;
+	overflow: visible;
+}
+.p7ISM.ism-noscript .ism-arrow-left,
+.p7ISM.ism-noscript .ism-arrow-right,
+.p7ISM.ism-noscript .ism-play-ctrl,
+.p7ISM.ism-noscript .ism-paginator {
+	display: none;
+}
+
+/*
+********************************
+  PANELS PER VIEWPORT OPTIONS
+********************************
+*/
+.ism-panels-10 .ism-panel {min-width: 10%;}
+.ism-panels-9 .ism-panel {min-width: 11.111%;}
+.ism-panels-8 .ism-panel {min-width: 12.5%;}
+.ism-panels-7 .ism-panel {min-width: 14.285%;}
+.ism-panels-6 .ism-panel {min-width: 16.666%;}
+.ism-panels-5 .ism-panel {min-width: 20%;}
+.ism-panels-4 .ism-panel {min-width: 25%;}
+.ism-panels-3 .ism-panel {min-width: 33.333%;}
+.ism-panels-2 .ism-panel {min-width: 50%;}
+.ism-panels-1 .ism-panel {min-width: 100%;}
+
+
+/*
+*******************************
+         BREAKPOINT 1
+*******************************
+*/
+@media only screen and (max-width: 1440px) {
+	.ism-panels-10 .ism-panel {min-width: 12.5%;}
+	.ism-panels-9 .ism-panel {min-width: 12.5%;}
+	.ism-panels-8 .ism-panel {min-width: 12.5%;}
+	.ism-panels-7 .ism-panel {min-width: 16.666%;}
+	.ism-panels-6 .ism-panel {min-width: 16.666%;}
+	.ism-panels-5 .ism-panel {min-width: 20%;}
+	.ism-panels-4 .ism-panel {min-width: 25%;}
+	.ism-panels-3 .ism-panel {min-width: 33.333%;}
+	.ism-panels-2 .ism-panel {min-width: 50%;}
+	.ism-panels-1 .ism-panel {min-width: 100%;}
+}
+/*
+*******************************
+         BREAKPOINT 2
+*******************************
+*/
+@media only screen and (max-width: 1280px) {
+	.ism-panels-10 .ism-panel {min-width: 20%;}
+	.ism-panels-9 .ism-panel {min-width: 20%;}
+	.ism-panels-8 .ism-panel {min-width: 20%;}
+	.ism-panels-7 .ism-panel {min-width: 20%;}
+	.ism-panels-6 .ism-panel {min-width: 20%;}
+	.ism-panels-5 .ism-panel {min-width: 20%;}
+	.ism-panels-4 .ism-panel {min-width: 25%;}
+	.ism-panels-3 .ism-panel {min-width: 33.333%;}
+	.ism-panels-2 .ism-panel {min-width: 50%;}
+	.ism-panels-1 .ism-panel {min-width: 100%;}
+}
+/*
+*******************************
+         BREAKPOINT 3
+*******************************
+*/
+@media only screen and (max-width: 1000px) {
+	.ism-panels-10 .ism-panel {min-width: 33.333%;}
+	.ism-panels-9 .ism-panel {min-width: 33.333%;}
+	.ism-panels-8 .ism-panel {min-width: 33.333%;}
+	.ism-panels-7 .ism-panel {min-width: 33.333%;}
+	.ism-panels-6 .ism-panel {min-width: 33.333%;}
+	.ism-panels-5 .ism-panel {min-width: 33.333%;}
+	.ism-panels-4 .ism-panel {min-width: 33.333%;}
+	.ism-panels-3 .ism-panel {min-width: 33.333%;}
+	.ism-panels-2 .ism-panel {min-width: 50%;}
+	.ism-panels-1 .ism-panel {min-width: 100%;}
+}
+/*
+*******************************
+   BREAKPOINT 4 - LINEARIZE
+*******************************
+*/
+@media only screen and (max-width: 768px) {
+	.ism-panel {min-width: 100% !important;}
+}

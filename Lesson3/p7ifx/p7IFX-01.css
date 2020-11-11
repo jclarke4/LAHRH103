@@ -1,0 +1,103 @@
+/*
+****************************
+ PVII Image Effects Magic
+ by Project Seven Development
+ www.projectseven.com
+ CSS Styles
+*****************************
+*/
+
+img.p7IFX {
+	vertical-align: bottom;
+	box-sizing: border-box;
+}
+
+.ifx-overflow {
+	overflow: hidden;
+}
+
+.origin-zero {
+	transform-origin: 0px 0px;
+}
+
+.p7IFX-morph {
+	padding: 2px;
+	border: none;
+	background-color: #FFF;
+	-webkit-transition: ease-in-out .5s;
+	transition: ease-in-out .5s;
+}
+.p7IFX-morph.ifx-on {
+	padding: 20px;
+	border-radius: 50% !important;
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+.p7IFX-focus {
+	padding: 2px;
+	background-color: #FFF;
+	border-radius: 0px;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	opacity: .75;
+	-webkit-transition: ease-in .5s;
+	transition: ease-in .5s;
+}
+.p7IFX-focus.ifx-on {
+	padding: 2px;
+	border-radius: 50% !important;
+	-webkit-transform: scale(.9);
+	transform: scale(.9);
+	opacity: 1;
+}
+
+.p7IFX-skew {
+	transform: rotate(0deg) skew(45deg) scale(.45,.45);
+	-webkit-perspective: 60px;
+	perspective: 60px;
+	-webkit-perspective-origin: 50% 50%;
+	perspective-origin: 50% 50%;
+	box-shadow: 30px 30px 30px #000;
+	-webkit-transition: ease-in-out .5s;
+	transition: ease-in-out .5s;
+}
+.p7IFX-skew.ifx-on {
+	transform: rotate(360deg) skew(0deg) scale(1,1);
+	box-shadow: none;
+}
+
+.p7IFX-shake.ifx-on {
+	animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+	transform: translate3d(0, 0, 0);
+	animation-iteration-count: infinite;
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+ @keyframes shake {
+ 10%, 90% {transform: translate3d(-1px, 0, 0);}
+ 20%, 80% {transform: translate3d(2px, 0, 0);}
+ 30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+ 40%, 60% {transform: translate3d(4px, 0, 0);}
+}
+
+.p7IFX-pulse.ifx-on {
+	animation-name: pulse_animation;
+	animation-duration: 5000ms;
+	transform-origin: 50% 50%;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+ @keyframes pulse_animation {
+   0% {transform: scale(1);}
+   5% {transform: scale(1.15);}
+  10% {transform: scale(1);}
+  15% {transform: scale(1.15);}
+  20% {transform: scale(1);}
+  30% {transform: scale(1.15);}
+  40% {transform: scale(1);}
+  50% {transform: scale(1.15);}
+  60% {transform: scale(1);}
+  70% {transform: scale(1.15);}
+  80% {transform: scale(1);}
+ 100% {transform: scale(1);}
+}

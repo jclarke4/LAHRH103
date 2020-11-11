@@ -1,0 +1,389 @@
+/* 
+  -----------------------------------
+  Omni Panel Magic
+  by Project Seven Development
+  www.projectseven.com
+  Core Styles
+  -----------------------------------
+*/
+
+.p7OPM {
+	width: 100%;
+	overflow: hidden;
+}
+
+.p7OPM,
+.p7OPM li,
+.p7OPM a,
+.opm-tabs-wrapper,
+.opm-panel-wrapper,
+.opm-tabs-wrapper ul {
+	box-sizing: border-box;
+}
+
+
+.opm-v-tabs .p7OPM-layout {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.opm-v-tabs .opm-panel-wrapper,
+.opm-v-tabs .opm-tabs-wrapper {
+	display: table-cell;
+	vertical-align: top;
+}
+.opm-tabs-wrapper.centered {
+	text-align: center;
+}
+.opm-tabs-wrapper.right {
+	text-align: right;
+}
+
+.opm-v-tabs .opm-tabs-wrapper {
+	table-layout: fixed;
+}
+.opm-v-tabs .opm-panel-wrapper {
+	width: 100%;
+	table-layout: fixed;
+}
+
+.opm-accordion-trig {
+	margin: 0px;
+	display: none;
+}
+
+.p7OPM .opm-accordion-trig a {
+	display: block;
+}
+
+/*
+*****************************************
+          Tabs Wrapper Structure
+    (opm-v-tabs are for Vertical Tabs)
+*****************************************	 
+*/
+.p7OPM .opm-tabs-wrapper ul {
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+	vertical-align: bottom;
+}
+.p7OPM.opm-v-tabs .opm-tabs-wrapper ul {
+	display: block;
+	padding: 0px; 
+}
+
+.p7OPM .opm-tabs-wrapper li {
+	list-style-type: none;
+	display: block;
+	margin: 0px;
+	float: left;
+	padding: 0;
+}
+.p7OPM.opm-v-tabs .opm-tabs-wrapper li {
+	float: none;
+	width: 100%;
+}
+.p7OPM .opm-tabs-wrapper a {
+	display: block;
+	text-decoration: none;
+	-webkit-transition: background, color, border ease .35s;
+	transition: background, color, border ease .35s;
+}
+.p7OPM .opm-accordion-trig a {
+	-webkit-transition: all linear .25s;
+	transition: all linear .25s;
+	text-decoration: none;
+}
+
+/*
+**********************************************
+       Curret Tab Marker (check mark)
+**********************************************
+*/
+.p7OPM .opm-tabs-wrapper a.open:before {
+	position: absolute;
+	left: 4px;
+}
+
+/*
+**************************
+     Rounded Corners
+**************************	 
+*/
+.p7OPM.p7OPM.opm-rounded {
+	border-radius: 5px;
+}
+.p7OPM.opm-rounded .opm-tabs-wrapper a {
+	border-radius: 0px;
+}
+
+/*
+********************************
+    Content Utility Rules 
+********************************
+*/
+.opm-panel-content img.scalable,
+.opm-panel-content img.scalable-rounded {
+	height: auto !important;
+	width: auto !important;
+	max-width: 100%;
+}
+.opm-panel-content.no-padding {
+	padding: 0px !important;
+}
+.opm-panel-content.centered {
+	text-align: center;
+}
+.opm-panel-content img {
+	vertical-align: bottom;
+}
+
+/*
+********************************
+       No Script Rules 
+********************************
+*/
+.p7OPM.opm-noscript .opm-tabs-wrapper li {
+	display: inline-block;
+	float: none;
+}
+.p7OPM.opm-noscript .opm-arrow-left,
+.p7OPM.opm-noscript .opm-arrow-right,
+.p7OPM.opm-noscript .opm-paginator,
+.p7OPM.opm-noscript .opm-toolbar {
+	display: none;
+}
+
+/*
+************************
+     Carousel
+************************
+*/
+.p7OPM.opm-carousel .opm-tabs-wrapper {
+	display: none;
+}
+
+/*
+**********************************
+   Arrows, Toolbar, Paginator
+**********************************
+*/
+.opm-arrows {
+	font-size: 0px;
+	position: absolute;
+	z-index: 10;
+	top: 40%;
+}
+.opm-arrows a {
+	display: block;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	width: 16px;
+	height: 28px;
+	opacity: .65;
+}
+.opm-arrows a:hover {
+	opacity: 1;
+}
+.opm-arrows.arrows-dark.opm-arrow-left a {
+	background-image: url(img/p7opm-left-dark.png);
+}
+.opm-arrows.arrows-dark.opm-arrow-right a {
+	background-image: url(img/p7opm-right-dark.png);
+}
+.opm-arrows.arrows-light.opm-arrow-left a {
+	background-image: url(img/p7opm-left-light.png);
+}
+.opm-arrows.arrows-light.opm-arrow-right a {
+	background-image: url(img/p7opm-right-light.png);
+}
+.opm-arrow-left {
+	left: 6px;
+}
+.opm-arrow-right {
+	right: 6px;
+}
+
+
+.p7OPM .opm-paginator,
+.p7OPM .opm-toolbar {
+	text-align: center;
+	font-size: 0px;
+	padding: 5px 0px;
+}
+.p7OPM.paginator-top .opm-paginator {
+	border-bottom: 1px solid #000;
+}
+.p7OPM.paginator-bottom .opm-paginator {
+	border-top: 1px solid #000;
+}
+
+.p7OPM .pags-dark.opm-paginator,
+.p7OPM .toolbar-dark.opm-toolbar {
+	background-color: #222;
+}
+.p7OPM .pags-light.opm-paginator,
+.p7OPM .toolbar-light.opm-toolbar {
+	background-color: #FFF;
+}
+
+.p7OPM .opm-paginator ul,
+.p7OPM .opm-toolbar ul {
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+}
+.p7OPM .opm-paginator li,
+.p7OPM .opm-toolbar li {
+	list-style-type: none;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 3px;
+}
+.p7OPM .opm-paginator a {
+	text-decoration: none;
+	display: block;
+	height: 16px;
+	width: 16px;
+	border-radius: 20px;
+	background-color: #222;
+}
+.p7OPM .pags-dark.opm-paginator a {
+	background-color: #BBB;
+}
+.p7OPM .opm-paginator a.opm-pause-play {
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 25px;
+	height: 25px;
+	background-color: transparent;
+	opacity: .7;
+}
+.p7OPM .opm-paginator a.opm-pause-play:hover {
+	opacity: 1;
+}
+
+.p7OPM .pags-dark.opm-paginator a.opm-pause-play {
+	background-image: url(img/p7opm-play-light.png);
+}
+.p7OPM .pags-dark.opm-paginator a.opm-pause-play.pause-icon {
+	background-image: url(img/p7opm-pause-light.png);
+}
+
+.p7OPM .pags-light.opm-paginator a.opm-pause-play {
+	background-image: url(img/p7opm-play.png);
+}
+.p7OPM .pags-light.opm-paginator a.opm-pause-play.pause-icon {
+	background-image: url(img/p7opm-pause.png);
+}
+
+
+.p7OPM .pags-light.opm-paginator a:hover {
+	background-color: #DC494C;
+}
+.p7OPM .pags-light.opm-paginator a.down {
+	background-color: #DC494C;
+}
+.p7OPM .pags-dark.opm-paginator a:hover {
+	background-color: #FFF;
+}
+.p7OPM .pags-dark.opm-paginator a.down {
+	background-color: #FFF;
+}
+.p7OPM .opm-paginator a.opm-pause-play:hover {
+	background-color: transparent;
+	opacity: 1;
+}
+.p7OPM .opm-pause {
+	margin-left: 24px;
+}
+
+.p7OPM.toolbar-top .opm-toolbar {
+	border-bottom: 1px solid #000;
+}
+.p7OPM.toolbar-bottom .opm-toolbar {
+	border-top: 1px solid #000;
+}
+
+.p7OPM .opm-toolbar em {
+	display: none;
+}
+.p7OPM .opm-toolbar a {
+	text-decoration: none;
+	font-size: 0px;
+	display: block;
+	height: 25px;
+	width: 25px;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: .75;
+}
+.p7OPM .opm-toolbar a:hover {
+	opacity: 1;
+}
+.p7OPM .toolbar-dark a.previous {
+	background-image: url(img/p7opm-prev-light.png)
+}
+.p7OPM .toolbar-dark a.opm-pause-play {
+	background-image: url(img/p7opm-play-light.png);
+}
+.p7OPM .toolbar-dark a.opm-pause-play.pause-icon {
+	background-image: url(img/p7opm-pause-light.png);
+}
+.p7OPM .toolbar-dark a.next {
+	background-image: url(img/p7opm-next-light.png);
+}
+.p7OPM .toolbar-light a.previous {
+	background-image: url(img/p7opm-prev.png);
+}
+.p7OPM .toolbar-light a.opm-pause-play {
+	background-image: url(img/p7opm-play.png);
+}
+.p7OPM .toolbar-light a.opm-pause-play.pause-icon {
+	background-image: url(img/p7opm-pause.png);
+}
+.p7OPM .toolbar-light a.next {
+	background-image: url(img/p7opm-next.png);
+}
+
+/*
+**********************************
+          Media Query
+**********************************
+*/
+@media only screen and (min-width: 0px) and (max-width: 700px) {
+
+.p7OPM.opm-phone,
+.p7OPM.opm-phone .p7OPM-layout,
+.p7OPM.opm-phone .opm-tabs-wrapper,
+.p7OPM.opm-phone .opm-tabs-wrapper {
+	display: block;
+	width: 100%;
+	max-height: 700777px;
+}
+.p7OPM.opm-phone.opm-v-tabs .p7OPM-layout,
+.p7OPM.opm-phone.opm-v-tabs .opm-panel-wrapper,
+.p7OPM.opm-phone.opm-v-tabs .opm-tabs-wrapper {
+	display: block;
+}
+
+.p7OPM.opm-phone .opm-accordion-trig {
+	display: block;
+}
+.p7OPM.opm-phone .opm-tabs-wrapper {
+	position: absolute;
+	top: -3000px;
+	
+}
+.p7OPM.opm-phone .opm-arrows,
+.p7OPM.opm-phone .opm-toolbar,
+.p7OPM.opm-phone .opm-paginator {
+	display: none;
+}
+
+
+}
+
+

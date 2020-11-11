@@ -15,6 +15,30 @@
 	font-weight: normal;
 }
 
+.pull-left-xs {
+    float: left!important;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .pull-left-sm {
+        float: left !important;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .pull-left-md {
+        float: left !important;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .pull-left-lg {
+        float: left !important;
+    }
+}
 /* Horizontal Bar*/
 
 .fading_green {
@@ -88,4 +112,30 @@ flex-grow: 1;
 .pagenumber {
 	font-size: 0.7em;
 	color: #333333;
+}
+
+/*Animated Sun */
+
+.sun {
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
 }

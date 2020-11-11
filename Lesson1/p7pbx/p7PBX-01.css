@@ -1,0 +1,267 @@
+/*
+****************************
+ PVII Pop Box Magic
+ by Project Seven Development
+ www.projectseven.com
+ CSS Styles
+*****************************
+*/
+
+/*PBX Rules*/
+.pbx-panel {
+	z-index: 999;
+	max-width: none;
+}
+.pbx-content {
+	position: relative;
+	padding: 12px 24px;
+	background-color: rgb(180,180,160);
+	font-size: inherit;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+.pbx-content.pbx-nopad {
+	padding: 0px;
+}
+.pbx-close {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	z-index: 1010;
+}
+.pbx-close a {
+	width: 24px;
+	height: 18px;
+	display: block;
+	font-size: 0px;
+	background-repeat: no-repeat;
+	opacity: .75;
+	-webkit-transform: scale(.9);
+	transform: scale(.9);
+	-webkit-transition: all ease .5s .1s;
+	transition: all ease .5s .1s;
+}
+.pbx-close a:hover {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.pbx-close.pbx-black-close a {
+	background-image: url(img/close-black.png);
+}
+.pbx-close.pbx-white-close a {
+	background-image: url(img/close-white.png);
+}
+.pbx-overlay {
+	background-color: rgba(0,0,0,0.8);
+	-webkit-transition: opacity .4s linear;
+	transition: opacity .4s linear;
+	opacity: 0;
+}
+
+
+/*Style Options */
+.pbx-rounded {
+	border-radius: 5px;
+}
+.pbx-button.pbx-rounded {
+	border-radius: 4px;
+}
+.pbx-borders {
+	border: 1px solid;
+}
+.pbx-content.pbx-shadow {
+	box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.6);
+}
+
+/*Background Colors*/
+.pbx-wine,
+.pbx-trigger.pbx-button.pbx-wine {
+	background-color: #C16162;
+	color: #000;
+}
+.pbx-trigger.pbx-button.pbx-wine:hover,
+.pbx-trigger.open.pbx-button.pbx-wine {
+	background-color: rgb(100,100,80);
+	color: #FFF;
+}
+.pbx-black,
+.pbx-trigger.pbx-button.pbx-black {
+	background-color: #151515;
+	color: #FFF;
+}
+.pbx-trigger.pbx-button.pbx-black:hover,
+.pbx-trigger.open.pbx-button.pbx-black {
+	background-color: rgb(100,100,80);
+	color: #FFF;
+}
+.pbx-white,
+.pbx-trigger.pbx-button.pbx-white {
+	background-color: #FFF;
+	color: #000;
+}
+.pbx-trigger.pbx-button.pbx-white:hover,
+.pbx-trigger.open.pbx-button.pbx-white {
+	background-color: rgb(100,100,80);
+	color: #FFF;
+}
+.pbx-teal,
+.pbx-trigger.pbx-button.pbx-teal {
+	background-color: #6FA4A8;
+	color: #000;
+}
+.pbx-trigger.pbx-button.pbx-teal:hover,
+.pbx-trigger.open.pbx-button.pbx-teal {
+	background-color: rgb(100,100,80);
+	color: #FFF;
+}
+.pbx-blue,
+.pbx-trigger.pbx-button.pbx-blue {
+	background-color: #699EBB;
+	color: #000;
+}
+.pbx-trigger.pbx-button.pbx-blue:hover,
+.pbx-trigger.open.pbx-button.pbx-blue {
+	background-color: rgb(100,100,80);
+	color: #FFF;
+}
+
+
+/*Triggers*/
+.pbx-trigger {
+	text-decoration: none;
+	border-bottom: 1px dotted;
+}
+.pbx-trig-img {
+	border-bottom: none !important;
+}
+.pbx-trigger.pbx-trig-light {
+	color: #FFF;
+}
+.pbx-trigger.pbx-trig-dark {
+	color: #000;
+}
+.pbx-trigger:hover,
+.pbx-trigger.open {
+	border-bottom: 1px solid;
+}
+.pbx-trigger.pbx-button {
+	text-decoration: none;
+	padding: 10px;
+	background-color: rgb(180,180,160);
+	color: #000;
+	border: none;
+}
+.pbx-trigger.pbx-button:hover,
+.pbx-trigger.open.pbx-button {
+	background-color: rgb(100,100,80);
+	color: #FFF;
+}
+.pbx-trigger.pbx-button.pbx-borders {
+	border: 1px solid;
+}
+
+.pbx-trigger.pbx-inline {
+	display: inline-block;
+	padding: 5px 10px;
+}
+.pbx-trigger.pbx-block {
+	display: block;
+}
+.pbx-glass {
+	box-shadow: 
+	0 1px 0px rgba(0,0,0,0.75),
+	inset 0 1px rgba(255,255,255,0.2), 
+	inset 0 10px 0px rgba(255,255,255,0.2), 
+	inset 0 10px 30px rgba(255,255,255,0.25), 
+	inset 0 -5px 30px rgba(0,0,0,0.3);
+}
+.pbx-shadow.pbx-glass {
+	box-shadow:
+	5px 5px 10px 0px rgba(0,0,0,0.6),
+	inset 0 1px rgba(255,255,255,0.2), 
+	inset 0 10px 0px rgba(255,255,255,0.2), 
+	inset 0 10px 30px rgba(255,255,255,0.25), 
+	inset 0 -5px 30px rgba(0,0,0,0.3);
+}
+.pbx-animate.pbx-glass:hover,
+.pbx-open.pbx-animate.pbx-glass {
+	box-shadow: 
+	0 1px 0px rgba(0,0,0,0.75),
+	inset 0 1px rgba(255,255,255,0.2), 
+	inset 0 20px 0px rgba(255,255,255,0.2), 
+	inset 0 10px 30px rgba(255,255,255,0.25), 
+	inset 0 -5px 30px rgba(0,0,0,0.3);
+}
+.pbx-trigger.pbx-animate {
+	-webkit-transition: all linear .3s 0s;
+	transition: all linear .3s 0s;
+}
+.pbx-trigger.open {
+	font-style: normal;
+}
+
+/*
+*************************
+    Video-Map Rules
+*************************
+*/
+.pbx-video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0px;
+	overflow: hidden;
+	margin: 0px !important;
+}
+.pbx-video-wrapper iframe, .pbx-video-wrapper object, .pbx-video-wrapper embed { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+}
+
+.pbx-map-wrapper {
+	position: relative; 
+	padding-bottom: 100%; 
+	padding-top: 0px; 
+	height: 0px; 
+	overflow: hidden; 
+}
+.pbx-map-wrapper iframe, .pbx-map-wrapper object, .pbx-map-wrapper embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pbx-video-wrapper iframe,
+.pbx-map-wrapper iframe {
+	box-sizing: border-box;
+}
+.pbx-video-wrapper img,
+.pbx-map-wrapper img {
+	border-radius: 0px !important;
+}
+
+.pbx-rounded .pbx-video-wrapper iframe,
+.pbx-rounded .pbx-map-wrapper iframe,
+.pbx-rounded .pbx-video-wrapper embed,
+.pbx-rounded .pbx-map-wrapper embed,
+.pbx-rounded .pbx-video-wrapper object,
+.pbx-rounded .pbx-map-wrapper object {
+	border-radius: 5px;
+}
+
+/*IMAGES*/
+.pbx-content img {
+	vertical-align: bottom;
+	width: auto !important;
+	height: auto !important;
+	max-width: 100%;
+}
+.pbx-rounded.pbx-content img {
+	border-radius: 5px;
+}

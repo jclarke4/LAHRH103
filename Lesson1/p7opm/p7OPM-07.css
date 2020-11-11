@@ -1,0 +1,202 @@
+/* 
+  -----------------------------------
+  Omni Panel Magic
+  by Project Seven Development
+  www.projectseven.com
+  Style Theme: 07 - Glass
+  -----------------------------------
+*/
+
+.p7OPM-07.p7OPM {
+	padding: 0px;
+	border: 1px solid #000;
+}
+
+/*
+**********************************
+      PRIMARY COLOR RULES
+**********************************
+
+*/
+.p7OPM-07 .opm-tabs-wrapper {
+	background-color: #222;
+}
+.p7OPM-07 .opm-panel-wrapper {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.p7OPM-07 .opm-tabs-wrapper a,
+.p7OPM-07 .opm-accordion-trig a {
+	background-color: rgb(180,180,160);
+	color: #000;
+	border: 1px solid rgba(0,0,0,0.60);
+	padding: 12px 20px;
+}
+.p7OPM-07 .opm-tabs-wrapper a:hover,
+.p7OPM-07 .opm-accordion-trig a:hover {
+	background-color: rgb(140,140,120);
+	color: #FFF;
+}
+
+.p7OPM-07 .opm-tabs-wrapper a.open,
+.p7OPM-07 .opm-accordion-trig a.open {
+	color: #FFF;
+	background-color: rgb(80,80,60);
+	position: relative;
+}
+.p7OPM-07 .opm-tabs-wrapper a {
+box-shadow: 
+	0 1px 0px rgba(0,0,0,0.75),
+	inset 0 1px rgba(255,255,255,0.3), 
+	inset 0 10px rgba(255,255,255,0.2), 
+	inset 0 10px 20px rgba(255,255,255,0.25), 
+	inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+/*
+**********************************************
+       Curret Tab Marker (check mark)
+**********************************************
+*/
+.p7OPM-07 .opm-tabs-wrapper a.open:before {
+	content: "\2713";
+}
+
+/*
+******************************************************
+     Colors for Accordion Mode (Phone View)
+	-By default, colors for all modes are the 
+	 same. Use the rules below if you would like
+	 to have different colors for accordion mode.
+******************************************************
+    EXCEPTION COLORS FOR ACCORDION (PHONE) MODE
+*/
+.p7OPM-07 .opm-accordion-trig a {
+	box-shadow: 
+	0 1px 0px rgba(0,0,0,0.75),
+	inset 0 1px rgba(255,255,255,0.3), 
+	inset 0 10px rgba(255,255,255,0.2), 
+	inset 0 10px 20px rgba(255,255,255,0.25), 
+	inset 0 -15px 30px rgba(0,0,0,0.3);
+	border: none;
+	border-bottom: 1px solid #333;
+}
+
+.p7OPM-07 .opm-accordion-trig a:hover,
+.p7OPM-07 .opm-accordion-trig a.open {}
+.p7OPM-07 .opm-accordion-trig a.open {}
+
+
+
+/*
+*********************************
+      Panel Content Rules
+*********************************
+*/
+.p7OPM-07 .opm-panel-content {
+	padding: 20px 36px;
+}
+
+
+/*
+*****************************************
+          Tabs Wrapper Structure
+    (opm-v-tabs are for Vertical Tabs)
+*****************************************	 
+*/
+.p7OPM-07 .opm-tabs-wrapper ul {
+	padding: 0px 0px 0px 10px;
+}
+.p7OPM-07.opm-v-tabs .opm-tabs-wrapper ul {
+	padding: 6px 6px; 
+}
+
+.p7OPM-07 .opm-tabs-wrapper li {
+	padding: 6px 10px 6px 0px;
+}
+.p7OPM-07.opm-v-tabs .opm-tabs-wrapper li {
+	padding: 6px 6px 6px 6px;
+}
+
+
+/*
+**************************
+     Rounded Corners
+**************************	 
+*/
+.p7OPM-07.p7OPM.opm-rounded {
+	border-radius: 5px;
+}
+.p7OPM-07.opm-rounded .opm-tabs-wrapper a {
+	border-radius: 4px;
+}
+
+
+/*
+********************************
+    Content Utility Rules 
+********************************
+*/
+.p7OPM-07 .blurb {
+	-webkit-transition: all ease 1.25s 0s;
+	transition: all ease 1.25s 0s;
+	-webkit-transform: translateX(90%);
+	transform: translateX(90%);
+	opacity: 0;
+	letter-spacing: .2em;
+}
+.p7OPM-07 .current-panel .blurb {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+	opacity: 1;
+}
+
+
+/*
+*************************
+    Video-Map Rules
+*************************
+*/
+.opm-video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0px;
+	overflow: hidden;
+	margin: 0px !important;
+}
+.opm-video-wrapper iframe,
+.opm-video-wrapper object,
+.opm-video-wrapper embed { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+}
+
+.opm-map-wrapper {
+	position: relative; 
+	padding-bottom: 100%; 
+	padding-top: 0px; 
+	height: 0px; 
+	overflow: hidden; 
+}
+.opm-map-wrapper iframe,
+.opm-map-wrapper object,
+.opm-map-wrapper embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.opm-video-wrapper iframe,
+.opm-map-wrapper iframe {
+	box-sizing: border-box;
+}
+.opm-video-wrapper img,
+.opm-map-wrapper img {
+	border-radius: 0px !important;
+}
